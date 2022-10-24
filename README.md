@@ -10,21 +10,15 @@ npm run dev
 yarn dev
 ```
 
-в hosts нужно будет указать
+Hosts:
 
 ```
 127.0.0.1       refugees.test
 ```
 
-Бот называется @RefugeesHelpBot
-
-Сейчас есть проблема с тем, что адрес с которого можно слать запросы только один, прописать адрес приложения в хостс у меня не получилось, поэтому приходится переключать в боте http://refugees.test/ и https://refugees-help.vercel.app/ это можно решить сделав отдельного dev бота, но это не реализвано
-
-Используется ORM [https://www.prisma.io/](https://www.prisma.io/)
+ORM [https://www.prisma.io/](https://www.prisma.io/)
 
 При обновлении схемы:
-
-Всё дропаем (дев режим не работает с хероку), скорее всего нужно будет купить где-то в России базу и переехать
 ```
 npx prisma migrate reset
 ```
@@ -32,7 +26,7 @@ npx prisma migrate reset
 npx prisma db push
 ```
 
-Ещё не нашёл способ читать env.local, в случае ошибок скопировать env.local в .env, но не коммитить .env
+В случае ошибок скопировать env.local в .env, но не коммитить .env
 
 Open [http://refugees.test](http://refugees.test) with your browser to see the result.
 
@@ -56,6 +50,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
-Сейчас нет назначения админ прав, их нужно проставлять юзеру вручную через базу например Prisma Studio (так же нужен .env для коннекта к базе)
